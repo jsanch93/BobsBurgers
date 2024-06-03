@@ -72,7 +72,7 @@ CSS Grid layout for wider screens, when browser supports grid:
 .caption {
     display: flex;
     flex-direction: column;
-    opacity: 0;
+    opacity: 1;
 
     /* Alignment */
     /*     align-items: flex-end; */

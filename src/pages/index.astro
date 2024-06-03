@@ -3,8 +3,7 @@
 import '../styles/global.css';
 
 // data source
-// replace temporary JSON placeholder API
-const source = 'https://jsonplaceholder.typicode.com/users';
+const source = 'https://bobsburgers-api.herokuapp.com/characters/';
 // fetch the data
 const res = await fetch(source); 
 // store retreived data
@@ -21,7 +20,7 @@ const data = await res.json();
 		<!-- Normalize CSS -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
 
-		<title>Retreive and and display external API data with Astro</title>
+		<title>Bob's Burgers Characters</title>
 	</head>
 	<body>
 		
@@ -37,12 +36,12 @@ const data = await res.json();
 				{
 					data.map( item =>
 					<li class="card-item">
-						<a href="#">
+						<a href={item.wikiUrl}>
 							<figure class="card">
-							<img src="https://assets.codepen.io/16425/image-placeholder.png" alt="Placeholder">
+								<img src={item.image} alt="Placeholder">
 							<figcaption class="caption">
 								<h3 class="caption-title">{item.name}</h3>
-								<p>{item.company.catchPhrase}</p>
+								<p>{item.firstEpisode}</p>
 							</figcaption>
 							</figure>
 						</a>
